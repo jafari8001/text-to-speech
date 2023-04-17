@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> text to speech </title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>text to speech</title>
+  </head>
+  <body class="bg-dark d-flex align-items-center justify-content-center">
+   
+    <div
+      class="p-4 rounded bg-light d-flex align-items-center justify-content-center"
+    >
+      <div class="row">
+        <div class="text-center my-3">
+          <h2>text to speech</h2>
+        </div>
+
+        <div class="form-floating my-3">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea"
+          ></textarea>
+          <label class="px-4" for="floatingTextarea"
+            >Enter a text to speech...</label
+          >
+        </div>
+
+        <div class="form-floating">
+          <select
+            class="form-select"
+            id="floatingSelect"
+            aria-label="Floating label select example"
+          >
+            <option selected>Open this select menu</option>
+          </select>
+          <label class="px-4" for="floatingSelect">select a speeker</label>
+        </div>
+
+        <button class="btn btn-primary btn-lg"> speech</button>
+
+
+      </div>
+    </div>
+  </body>
 </html>
