@@ -11,42 +11,40 @@
     <link rel="stylesheet" href="../css/style.css" />
     <title>text to speech</title>
   </head>
-  <body class="bg-dark d-flex align-items-center justify-content-center">
-   
-    <div
-      class="p-4 rounded bg-light d-flex align-items-center justify-content-center"
-    >
+
+  <body class="bg-dark text-white">
+    <div class="container text-center">
       <div class="row">
-        <div class="text-center my-3">
-          <h2>text to speech</h2>
+        <div class="col-md-6 mx-auto">
+          <form>
+            <div class="form-group my-3">
+              <textarea name="" id="text-input" placeholder="Type anything..." class="form-control form-control-lg"></textarea>
+            </div>
+
+            <div class="form-group my-2">
+              <label class="float-start" for="rate">Rate</label>
+              <div class="badge text-bg-primary float-end" id="rate-value">1</div>
+              <input type="range" id="rate" class="custom-range form-range" min="0.5" max="2" step="0.1" value="1">
+            </div>
+
+            <div class="form-group my-2">
+              <label class="float-start" for="pitch">pitch</label>
+              <div class="badge text-bg-primary float-end" id="pitch-value">1</div>
+              <input type="range" id="pitch" class="custom-range form-range" min="0" max="2" step="0.1" value="1">
+            </div>
+
+            <div class="form-group my-2">
+              <select id="voice-select" class="form-control form-control-lg"></select>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary my-2" type="button">speek it</button>
+            </div>
+          </form>
         </div>
-
-        <div class="form-floating my-3">
-          <textarea
-            class="form-control"
-            placeholder="Leave a comment here"
-            id="floatingTextarea"
-          ></textarea>
-          <label class="px-4" for="floatingTextarea"
-            >Enter a text to speech...</label
-          >
-        </div>
-
-        <div class="form-floating">
-          <select
-            class="form-select"
-            id="floatingSelect"
-            aria-label="Floating label select example"
-          >
-            <option selected>Open this select menu</option>
-          </select>
-          <label class="px-4" for="floatingSelect">select a speeker</label>
-        </div>
-
-        <button class="btn btn-primary btn-lg"> speech</button>
-
-
       </div>
     </div>
+
+    <script src="../../app.js"></script>
   </body>
 </html>
