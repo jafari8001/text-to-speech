@@ -12,33 +12,63 @@
     <title>text to speech</title>
   </head>
 
-  <body class="bg-dark text-white">
+  <body class="d-flex align-items-center justify-content-center bg-dark text-white">
     <div class="container text-center">
       <div class="row">
-        <div class="col-md-6 mx-auto">
+        <div class="col-md-6 mx-auto .bg-dark bg-gradient rounded p-4 shadow">
           <form>
             <div class="form-group my-3">
-              <textarea name="" id="text-input" placeholder="Type anything..." class="form-control form-control-lg"></textarea>
+              <textarea
+                name=""
+                id="text-input"
+                placeholder="Type anything..."
+                class="form-control form-control-lg"
+              ></textarea>
             </div>
 
             <div class="form-group my-2">
               <label class="float-start" for="rate">Rate</label>
-              <div class="badge text-bg-primary float-end" id="rate-value">1</div>
-              <input type="range" id="rate" class="custom-range form-range" min="0.5" max="2" step="0.1" value="1">
+              <div class="badge text-bg-primary float-end" id="rate-value">
+                1
+              </div>
+              <input
+                type="range"
+                id="rate"
+                class="custom-range form-range"
+                min="0.5"
+                max="2"
+                step="0.1"
+                value="1"
+              />
             </div>
 
             <div class="form-group my-2">
               <label class="float-start" for="pitch">pitch</label>
-              <div class="badge text-bg-primary float-end" id="pitch-value">1</div>
-              <input type="range" id="pitch" class="custom-range form-range" min="0" max="2" step="0.1" value="1">
+              <div class="badge text-bg-primary float-end" id="pitch-value">
+                1
+              </div>
+              <input
+                type="range"
+                id="pitch"
+                class="custom-range form-range"
+                min="0"
+                max="2"
+                step="0.1"
+                value="1"
+              />
             </div>
 
             <div class="form-group my-2">
-              <select id="voice-select" class="form-control form-control-lg"></select>
+              <select
+                id="voice-select"
+                class="form-control form-control-lg"
+              ></select>
             </div>
 
             <div class="d-grid gap-2">
-              <button class="btn btn-primary my-2" type="button">speek it</button>
+              <button class="btn btn-primary my-2" type="submit">
+                speek it
+              </button>
             </div>
           </form>
         </div>
