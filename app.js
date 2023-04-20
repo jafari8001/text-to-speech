@@ -1,8 +1,7 @@
 //init speech
 const synth = window.speechSynthesis;
 
-//DOM elements 
-
+//Get DOM elements 
 const textForm = document.querySelector('form');
 const textInput = document.querySelector('#text-input');
 const voiceSelect = document.querySelector('#voice-select');
@@ -16,6 +15,7 @@ const voiceWave = document.querySelector('#voiceWave');
 // init voices array
 let voices = [];
 
+//Get voice from synth and create an Element
 const getVoices =()=>{
     voices = synth.getVoices();
     // loop 
@@ -27,30 +27,31 @@ const getVoices =()=>{
         voiceSelect.appendChild(option);
         })
 }
-
+// If Array be empty
 getVoices();
 if (synth.onvoiceschanged !== undefined) {
     synth.onvoiceschanged = getVoices;
 }
 
-// speak
+// speak function
 const speak = ()=>{
+    // Check speaking
     if (synth.speaking) {
         console.error('Already...');
         return;
     }
+    // If not empty run the function
     if (textInput.value !== '') {
-        // body.style.background = 'black url(../image/audio.gif)';
-        // body.style.backgroundRepeat = 'repeat-x';
-        // body.style.backgroundSize = '50%';
+        // Show wave voice
         voiceWave.style.opacity = '1';
+        
         // set speak text 
         const speakText = new SpeechSynthesisUtterance(textInput.value);
+
         // speak end
         speakText.onend = e=>{
             console.log('Done speaking...');
-        // set background
-        body.style.background = 'black';
+        // Hide wave 
         voiceWave.style.opacity = '0';
         }
 
@@ -61,7 +62,6 @@ const speak = ()=>{
 
         // select voice
         const selectedVoice = voiceSelect.selectedOptions[0].getAttribute('data-name');
-
         // loop 
         voices.forEach(voice =>{
             if (voice.name === selectedVoice) {
@@ -78,7 +78,7 @@ const speak = ()=>{
     }
 }
 
-// Event
+// Events
 textForm.addEventListener('submit', e=>{
     e.preventDefault();
     speak(0);
